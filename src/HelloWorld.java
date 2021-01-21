@@ -7,7 +7,16 @@ public class HelloWorld {
         System.out.println(myFavoriteNumber);
         //Number TWO
         String myString = "Hello, Phoebe";
-        //Number Three
+        /*Number Three
         myString ='C';
+        Reassigning a character to String gives an error and says requires String
+         */
+        /*Number Four
+        myString = 4.14159;
+        Reassigning a character to double gives an error and says requires String
+        */
+        //Number 5 - Gives error and says variable might not have been initialized
+        long myNumber;
+        System.out.println(myNumber);
     }
 }
