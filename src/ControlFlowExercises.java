@@ -4,11 +4,27 @@ public class ControlFlowExercises {
 
         //Question 1: WHILE Loop
         while(i<=15){
-            System.out.println("Value of i is: " +i);
+            System.out.print(i +" ");
             i++;
         }
-
-        //Question 2: DO WHILE loop
-
+        System.out.println("\n");
+        //Question 1B: DO WHILE loop
+//        int x=2;
+//        do{
+//            System.out.println(x);
+//            x+=2;
+//        }while(x<=100);
+        //do-while 2
+//        int y=100;
+//        do{
+//            System.out.println(y);
+//            y-=5;
+//        }while(y>=-10);
+        //do while-3
+        double z=2;
+        do{
+            System.out.println(z);
+            z = Math.pow(z, 2);
+        }while(z<=1000000);
     }
 }
