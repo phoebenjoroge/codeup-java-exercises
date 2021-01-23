@@ -37,6 +37,17 @@ public class ControlFlowExercises {
 //        for(double c=2; c<=1000000; c*=c){
 //            System.out.println(c);
 //        }
-
+        //Question 3 -FizzBuzz
+        for(int f=1; f<=100; f++){
+            if(f%15 ==0){
+                System.out.println("FizzBuzz");
+            }else if(f%5==0){
+                System.out.println("Buzz");
+            }else if(f%3==0){
+                System.out.println("Fizz");
+            }else{
+                System.out.println(f);
+            }
+        }
     }
 }
