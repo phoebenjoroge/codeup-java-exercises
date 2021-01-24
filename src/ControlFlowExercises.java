@@ -51,27 +51,51 @@ public class ControlFlowExercises {
 //                System.out.println(f);
 //            }
 //        }
-        //Question 4 -Power
+        //Question 3 -Power
 
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Please enter an integer: ");
-        int num1 = input.nextInt();
-        squareCubed(num1);
+//        System.out.print("Please enter an integer: ");
+//        int num1 = input.nextInt();
+//        squareCubed(num1);
+//
+//        boolean play = true;
+//        System.out.print("Would you like to continue? [y/n]: ");
+//        char answer = input.next().charAt(0);
+//
+//        while (play==true && answer=='y') {
+//
+//            if (answer == 'y') {
+//                System.out.print("Enter another integer: ");
+//                int num2 = input.nextInt();
+//                squareCubed(num2);
+//            }
+//            System.out.print("Would you like to continue? [y/n]: ");
+//            answer = input.next().charAt(0);
+//        }
+        //Question 4 -Grades
+        System.out.print("Please enter grade between 0-100: ");
+        int grade = input.nextInt();
+        char continueGrade ='y';
 
-        boolean play = true;
-        System.out.print("Would you like to continue? [y/n]: ");
-        char answer = input.next().charAt(0);
+        while (grade >0 && continueGrade=='y') {
 
-        while (play==true && answer=='y') {
+            if (grade<100 && grade>=88) {
+                System.out.println("Grade is an A");
+            }else if(grade<88 && grade>=80){
+                System.out.println("Grade is  B");
+            }else if(grade<80 && grade>=67){
+                System.out.println("Grade is C");
+            }else if(grade<67 && grade>=60){
+                System.out.println("Grade is D");
+            }else
+                System.out.print("Grade is F");
 
-            if (answer == 'y') {
-                System.out.print("Enter another integer: ");
-                int num2 = input.nextInt();
-                squareCubed(num2);
-            }
-            System.out.print("Would you like to continue? [y/n]: ");
-            answer = input.next().charAt(0);
+            System.out.print("Would you like to enter another grade? [y/n]: ");
+            continueGrade = input.next().charAt(0);
+
+            System.out.print("Please enter grade between 0-100: ");
+            grade = input.nextInt();
         }
 
     }
