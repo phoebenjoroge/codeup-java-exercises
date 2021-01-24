@@ -1,10 +1,12 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
-        int i= 5;
+        int i = 5;
 
         //Question 1: WHILE Loop
-        while(i<=15){
-            System.out.print(i +" ");
+        while (i <= 15) {
+            System.out.print(i + " ");
             i++;
         }
         System.out.println("\n");
@@ -38,16 +40,48 @@ public class ControlFlowExercises {
 //            System.out.println(c);
 //        }
         //Question 3 -FizzBuzz
-        for(int f=1; f<=100; f++){
-            if(f%15 ==0){
-                System.out.println("FizzBuzz");
-            }else if(f%5==0){
-                System.out.println("Buzz");
-            }else if(f%3==0){
-                System.out.println("Fizz");
-            }else{
-                System.out.println(f);
+//        for(int f=1; f<=100; f++){
+//            if(f%15 ==0){
+//                System.out.println("FizzBuzz");
+//            }else if(f%5==0){
+//                System.out.println("Buzz");
+//            }else if(f%3==0){
+//                System.out.println("Fizz");
+//            }else{
+//                System.out.println(f);
+//            }
+//        }
+        //Question 4 -Power
+
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please enter an integer: ");
+        int num1 = input.nextInt();
+        squareCubed(num1);
+
+        boolean play = true;
+        System.out.print("Would you like to continue? [y/n]: ");
+        char answer = input.next().charAt(0);
+
+        while (play==true && answer=='y') {
+
+            if (answer == 'y') {
+                System.out.print("Enter another integer: ");
+                int num2 = input.nextInt();
+                squareCubed(num2);
             }
+            System.out.print("Would you like to continue? [y/n]: ");
+            answer = input.next().charAt(0);
         }
+
+    }
+
+    public static int squareCubed(int num) {
+        System.out.println("number | Squared | Cubed ");
+        System.out.println("------ | ------- | ----- ");
+        for (int g = 1; g <= num; g++) {
+            System.out.println(g + "   | " + (g * g) + "    | " + (Math.pow(g, 3)));
+        }
+        return num;
     }
 }
