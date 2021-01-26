@@ -4,7 +4,7 @@ public class Bob {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Communicate with Bob : ");
-        String bobCommunication = input.nextLine();
+        String bobCommunication = input.nextLine().trim();
         if(bobCommunication.endsWith("?")){
             System.out.println("Sure");
         }else if(bobCommunication.endsWith("!")){
@@ -14,5 +14,6 @@ public class Bob {
         }else{
             System.out.println("Whatever");
         }
+
     }
 }
