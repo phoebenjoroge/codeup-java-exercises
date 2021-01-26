@@ -2,9 +2,17 @@ import java.util.Scanner;
 
 public class MethodsExercises {
     public static void main(String[] args) {
+        //Question one
         long add = addition(3,5);
         System.out.println(add);
-        verifyUserNumber(1,20);
+        //Question two
+//        verifyUserNumber(1,20);
+
+        //Question 3
+        System.out.print("PLease enter a number between 1 and 10: ");
+        Scanner input =new Scanner(System.in);
+        int factorialNumber = input.nextInt();
+        factorial(factorialNumber);
     }
     //Number 1 -Functions that perform basic arithmetic
     public static long addition(int num1, int num2) {
@@ -39,7 +47,7 @@ public class MethodsExercises {
             if(response>= min && response <= max){
                 System.out.println("you entered : " + response);
             }else{
-                System.out.println("Try again, please enter a number between 1 and 20 ");
+                System.out.print("Try again, please enter a number between 1 and 20: ");
                 response = input.nextInt();
             }
             System.out.print("Would you like to continue? [y/n] : ");
@@ -47,7 +55,17 @@ public class MethodsExercises {
 
         }
 
+    }
+    // Question 3 - Create factorial of number
+    public static void factorial(int num){
 
+        String print = num + "! = ";
+        int i,fact=1;
+        for(i=1;i<=num;i++) {
+            fact = fact * i;
 
+//            System.out.println(fact);
+        }
+        System.out.println(print + fact );
     }
 }
