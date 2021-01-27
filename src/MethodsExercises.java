@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class MethodsExercises {
@@ -12,7 +13,12 @@ public class MethodsExercises {
         System.out.print("PLease enter a number between 1 and 10: ");
         Scanner input =new Scanner(System.in);
         int factorialNumber = input.nextInt();
-        factorial(factorialNumber);
+//        factorial(factorialNumber);
+
+        //Question 4
+        System.out.print("How many sides does the Dice have? : ");
+        int diceSides =input.nextInt();
+        diceRoll(diceSides);
     }
     //Number 1 -Functions that perform basic arithmetic
     public static long addition(int num1, int num2) {
@@ -67,5 +73,23 @@ public class MethodsExercises {
 //            System.out.println(fact);
         }
         System.out.println(print + fact );
+    }
+
+    //Question Four
+    public static void  diceRoll(int num){
+        Scanner input =new Scanner(System.in);
+        char rollDice ='y';
+        Random rand = new Random();
+        while (rollDice == 'y') {
+            if(num >=1){
+                System.out.print("Roll dice: ");
+                int roll = rand.nextInt(num);
+                System.out.println("You rolled " + roll);
+                System.out.print("Would you like to roll? [y/n] : ");
+                rollDice = input.next().charAt(0);
+            }
+
+        }
+
     }
 }
