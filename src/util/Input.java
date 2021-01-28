@@ -1,2 +1,4 @@
-package util;public class Input {
+package util;
+
+public class Input {
 }
