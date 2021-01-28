@@ -13,7 +13,7 @@ public class MethodsExercises {
         System.out.print("PLease enter a number between 1 and 10: ");
         Scanner input =new Scanner(System.in);
         int factorialNumber = input.nextInt();
-//        factorial(factorialNumber);
+        factorial(factorialNumber);
 
         //Question 4
         System.out.print("How many sides does the Dice have? : ");
@@ -36,6 +36,7 @@ public class MethodsExercises {
     public static long modulus(int num1, int num2) {
         return num1 % num2;
     }
+    //Bonus
 //    public static long multiplicationReloaded(int num1, int num2) {
 //
 //        return num2;
@@ -47,13 +48,13 @@ public class MethodsExercises {
 
 
         while (continueNumber == 'y') {
-            System.out.print("Enter a number between 1 and 20: ");
+            System.out.print("Enter a number between" + min +"and" + max + ": ");
             int response = input.nextInt();
 
             if(response>= min && response <= max){
                 System.out.println("you entered : " + response);
             }else{
-                System.out.print("Try again, please enter a number between 1 and 20: ");
+                System.out.print("Try again, please enter a number between" + min +"and" + max + ": ");
                 response = input.nextInt();
             }
             System.out.print("Would you like to continue? [y/n] : ");
@@ -64,15 +65,22 @@ public class MethodsExercises {
     }
     // Question 3 - Create factorial of number
     public static void factorial(int num){
-
-        String print = num + "! = ";
-        int i,fact=1;
-        for(i=1;i<=num;i++) {
-            fact = fact * i;
+        Scanner input =new Scanner(System.in);
+        char continueFactorial ='y';
+        while (continueFactorial == 'y') {
+            System.out.print("PLease enter a number between 1 and 10: ");
+            num = input.nextInt();
+            String print = num + "! = ";
+            int i, fact = 1;
+            for (i = 1; i <= num; i++) {
+                fact = fact * i;
 
 //            System.out.println(fact);
+            }
+            System.out.println(print + fact);
+            System.out.print("Would you like to continue? [y/n] : ");
+            continueFactorial = input.next().charAt(0);
         }
-        System.out.println(print + fact );
     }
 
     //Question Four
@@ -80,13 +88,22 @@ public class MethodsExercises {
         Scanner input =new Scanner(System.in);
         char rollDice ='y';
         Random rand = new Random();
+        System.out.print("Roll dice: ");
+        int roll = rand.nextInt(num);
         while (rollDice == 'y') {
-            if(num >=1){
-                System.out.print("Roll dice: ");
-                int roll = rand.nextInt(num);
+            if(roll >=1){
+
                 System.out.println("You rolled " + roll);
                 System.out.print("Would you like to roll? [y/n] : ");
                 rollDice = input.next().charAt(0);
+                System.out.print("Roll dice: ");
+                roll = rand.nextInt(num);
+            }else{
+
+                System.out.print("Would you like to roll? [y/n] : ");
+                rollDice = input.next().charAt(0);
+//                System.out.print("Roll dice: ");
+                roll = rand.nextInt(num);
             }
 
         }
