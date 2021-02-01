@@ -11,17 +11,16 @@ public class Person {
     }
 
 
-
     public void sayHello() {
 //TODO: print a message to the console using the person's name
-        System.out.println("Hello " + getName());
+        System.out.println("Hello " + name);
     }
 
     public static void main(String[] args) {
         Person phoebe = new Person();
         phoebe.setName("Phoebe");
         System.out.println(phoebe.getName());
-
+        phoebe.sayHello();
 
     }
 
