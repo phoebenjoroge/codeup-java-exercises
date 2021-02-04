@@ -1,6 +1,10 @@
 public class Person {
     private String name;
 
+    Person(String name){
+        this.name = name;
+    }
+
     public void setName(String name) {
 //TODO: change the name property to the passed value
         this.name =name;
@@ -17,8 +21,7 @@ public class Person {
     }
 
     public static void main(String[] args) {
-        Person phoebe = new Person();
-        phoebe.setName("Phoebe");
+        Person phoebe = new Person("Phoebe");
         System.out.println(phoebe.getName());
         phoebe.sayHello();
     }
