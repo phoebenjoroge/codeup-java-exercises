@@ -21,7 +21,6 @@ public class Person {
         phoebe.setName("Phoebe");
         System.out.println(phoebe.getName());
         phoebe.sayHello();
-
     }
 
 }
