@@ -3,44 +3,73 @@ package util;
 import java.util.Scanner;
 
 public class Input {
-    private Scanner scanner =new Scanner(System.in);
 
-    Input(){
+    private Scanner scanner;
+
+    public Input(){
         this.scanner = new Scanner(System.in);
     }
 
-    String getString(){
+    public String getString(){
+        return getString("Please enter a string:");
+    }
+    public String getString(String prompt){
+        System.out.println(prompt);
         return this.scanner.nextLine();
     }
-    boolean yesNo(){
-        return this.scanner.nextBoolean();
+
+    public boolean yesNo() {
+        return yesNo("Please enter \"yes\" or \"no\": ");
     }
-    int getInt(){
+    public boolean yesNo(String prompt){
+        System.out.print(prompt);
+
+        String answer = this.scanner.nextLine();
+        return (answer.toLowerCase().equals("y") ||
+                answer.toLowerCase().equals("yes"));
+    }
+
+    public int getInt(){
+        return getInt("Please enter an integer: ");
+    }
+    public int getInt(String prompt){
+        System.out.print(prompt);
         return this.scanner.nextInt();
     }
-    int getInt(int min, int max){
-        while(true){
-            int userInput = this.scanner.nextInt();
-            if(userInput >= min && userInput <= max){
-                return userInput;
-            }
+
+    public int getInt(int min, int max){
+        return getInt("Please enter an integer between "+min+" and "+max+": ",min,max);
+    }
+    public int getInt(String prompt, int min, int max){
+        while (true) {
+            System.out.println(prompt);
+            int answer = this.scanner.nextInt();
+            if (answer >= min && answer <= max)
+                return answer;
         }
     }
-    double getDouble(){
+
+    public double getDouble(){
+        return getDouble("Please enter a double: ");
+    }
+    public double getDouble(String prompt){
+        System.out.println(prompt);
         return this.scanner.nextDouble();
     }
-    double getDouble(double min, double max){
-        while(true){
-            double userInput = this.scanner.nextDouble();
-            if(userInput >= min && userInput <= max){
-                return userInput;
-            }
+
+    public double getDouble(double min, double max){
+        return getDouble("Please enter a number between "+min+" and "+max+": ",min,max);
+    }
+    public double getDouble(String prompt, double min, double max){
+        while (true) {
+            System.out.println(prompt);
+            double answer = this.scanner.nextDouble();
+            if (answer >= min && answer <= max)
+                return answer;
         }
     }
-
-
     public static void main(String[] args) {
-
-
+        Input in = new Input();
+        double tryOut = in.getDouble(10, 20);
     }
 }
