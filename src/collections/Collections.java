@@ -66,16 +66,34 @@ public class Collections {
         // 1. Create a HashMap called usernames that contains:
         //   a. first name
         //   b. Github username
+        HashMap<String, String> usernames = new HashMap<>();
+        usernames.put("Casey", "fridaynext");
+        usernames.put("Daniel", "danielfryar");
+        usernames.put("Fernando", "fmendoza");
+        System.out.println(usernames);
         // 2. re-initialize the HashMap using the .clear() method
+        usernames.clear();
         // 3. use the .put() method to add "Casey" -> "fridaynext" back to the map
+        usernames.put("Casey", "fridaynext");
         // 4. use the .putIfAbsent() method to add
         //   a. "Vivian" -> "viviancan"
         //   b. "Casey" -> "XpenguinX"
+        usernames.putIfAbsent("Daniel", "danielfryar");
+        usernames.putIfAbsent("Casey", "XpenguinX");
+        System.out.println(usernames);
         // 5. What happend with the .putIfAbsent()? Did both items get added? Why/why not?
+        //Key CAsey was present so the key value pair of ifAbsent was not added
+        //Key Daniel was not present so the key value pair was added
         // 6. Use the .remove() method to remove "Casey"
+        usernames.remove("Casey");
+        System.out.println(usernames);
         // 7. Use the .replace() method to change Vivian's username to "viviancandev"
+        usernames.replace("Daniel", "danielfryardev");
+        System.out.println(usernames);
         // 8. Use the .clear() method to clear the map
+        usernames.clear();
         // 9. Use the .isEmpty() method to verify that it was cleared
+        System.out.println(usernames.isEmpty() ? "HashMap is empty" : "HashMap is not emppty");
 
     }
 }
