@@ -1,2 +1,4 @@
-package grades;public class GradesApplication {
+package grades;
+
+public class GradesApplication {
 }
